@@ -6,7 +6,7 @@
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 20:54:02 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/07 16:02:04 by ckumera          ###   ########.fr       */
+/*   Updated: 2019/09/07 16:55:43 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,14 @@ char	*get_negative(char *s)
 	return (s2);
 }
 
-char	*ft_itoa(int a)
+char	*ft_itoa(int n)
 {
 	int		nb;
 	char	*str;
 	int		run;
 
-	nb = a;
-	if (a < 0)
+	nb = n;
+	if (n < 0)
 		nb = nb * -1;
 	run = 0;
 	str = (char*)malloc(sizeof(char) * 12);
@@ -91,7 +91,7 @@ char	*ft_itoa(int a)
 		run++;
 	}
 	str[run] = single_itoa(nb % 10);
-	if (a < 0)
+	if (n < 0)
 		return (get_negative(ft_strrev(str)));
 	return (ft_strrev(str));
 }
