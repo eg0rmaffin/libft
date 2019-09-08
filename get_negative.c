@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   get_negative.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 17:01:53 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/08 00:08:40 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/07 23:50:04 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/07 23:52:10 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+char	*get_negative(char *s)
 {
-	write(1, &c, 1);
+	char	*s2;
+	int		run;
+	int		i;
+
+	run = 1;
+	i = 0;
+	if (!(s2 = (char*)malloc(sizeof(char) * ft_strlen(s) + 2)))
+		return (NULL);
+	s2[0] = '-';
+	while (s[i] != '\0')
+	{
+		s2[run] = s[i];
+		run++;
+		i++;
+	}
+	s2[run] = '\0';
+	free(s);
+	return (s2);
 }

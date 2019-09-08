@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 17:01:53 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/08 00:08:40 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/08 15:39:15 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/08 15:57:22 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	write(1, &c, 1);
+	int run;
+
+	run = 0;
+	while (src[run] != '\0')
+	{
+		dst[run] = src[run];
+		run++;
+	}
+	dst[run] = '\0';
+	return (dst);
 }

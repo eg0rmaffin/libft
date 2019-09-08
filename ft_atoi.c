@@ -1,18 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 17:01:53 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/08 00:08:40 by ckumera          ###   ########.fr       */
+/*   Created: 2019/07/09 05:58:24 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/08 20:09:43 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+int		ft_atoi(char *str)
 {
-	write(1, &c, 1);
+	int sign;
+	int res;
+
+	sign = 1;
+	res = 0;
+	while (((*str > 8) && (*str < 14)) || (*str == 32))
+		str++;
+	if (*str == 45)
+	{
+		sign = 88;
+		str++;
+	}
+	else if (*str == 43)
+		str++;
+	while ((*str > 47) && (*str < 58))
+	{
+		res = (res * 10) + (*str - 48);
+		str++;
+	}
+	if (sign != 1)
+	{
+		res = -1 * res;
+	}
+	return (res);
 }
