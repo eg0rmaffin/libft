@@ -6,7 +6,7 @@
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 16:52:43 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/09 17:18:38 by ckumera          ###   ########.fr       */
+/*   Updated: 2019/09/09 22:36:23 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void	ft_bzero(void *s, size_t n);
 char	*ft_strcat(char *restrict s1, const char *restrict s2);
 char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

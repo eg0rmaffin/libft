@@ -1,49 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 16:54:55 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/09 22:18:29 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/09 20:41:23 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/09 22:24:46 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//#include <stdio.h>
-
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	size_t run;
 	unsigned char *d;
 	unsigned char *s;
-	size_t run;
 
+	d = (unsigned char *) dst;
+	s = (unsigned char *) src;
 	run = 0;
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (!n)
+	if (!src && !dst && !len)
 		return (NULL);
-	while (run < n && s[run] != '\0')
+	while (run < len && src != '\0')
 	{
 		d[run] = s[run];
-		if (s[run] == (unsigned char)c)
-			return ((void*)(dst + (run + 1)));
 		run++;
 	}
-	return (NULL);
+	return (dst);
 }
-
-
-/*int main()
-//{
-//	char dst1[10];
-	char dst2[10];
-	const char *src = "Hello";
-	printf("%s\n", ft_memccpy(dst1, src, 'c', 10));
-	printf("%s\n", dst1);
-	printf("%s\n", memccpy(dst2, src, 'c', 10));
-	printf("%s\n", dst2);
-	return (0);
-}*/
