@@ -6,7 +6,7 @@
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 16:52:43 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/08 20:10:28 by ckumera          ###   ########.fr       */
+/*   Updated: 2019/09/09 14:16:36 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ int		ft_isalpha(int a);
 int		ft_isdigit(int a);
 int		ft_isalnum(int a);
 int		ft_atoi(char *str);
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
 
 #endif

@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 05:58:24 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/08 23:41:30 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/09 14:01:51 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/09 14:17:12 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+void	ft_bzero(void *s, size_t n)
 {
-	int sign;
-	size_t res;
-
-	sign = 1;
-	res = 0;
-	while (((*str > 8) && (*str < 14)) || (*str == 32))
-		str++;
-	if (*str == '-' || *str == '+')
+	size_t run;
+	unsigned char *str;
+	
+	str = (unsigned char *) s;
+	run = 0;
+	if (n == 0)
+		return;
+	while (run < n)
 	{
-		if(*str == '-')
-		   sign = -1;	
-		str++;
+		str[run] = 0;
+		run++;
 	}
-	while ((*str >= '0') && (*str <= '9'))
-	{
-		if(res <= 9223372036854775807)
-			res = (res * 10) + (*str - '0');
-		else if (sign == -1)
-			return (0);
-		else
-			return (-1);
-		str++;
-	}
-	return (res * sign);
+	return;
 }
