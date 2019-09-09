@@ -6,7 +6,7 @@
 #    By: ckumera <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/07 17:16:10 by ckumera           #+#    #+#              #
-#    Updated: 2019/09/09 14:15:27 by ckumera          ###   ########.fr        #
+#    Updated: 2019/09/09 17:18:57 by ckumera          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,10 @@ SRCS = ft_putchar.c \
 	   ft_isalnum.c \
 	   ft_atoi.c \
 	   ft_memset.c \
-	   ft_bzero.c
+	   ft_bzero.c \
+	   ft_strcat.c \
+	   ft_strncat.c \
+	   ft_memccpy.c
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 
