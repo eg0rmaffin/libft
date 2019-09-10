@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 20:41:23 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/10 18:16:23 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/10 18:20:55 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/10 19:28:49 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t run;
-	unsigned char *d;
-	unsigned char *s;
+	size_t i;
 
-	d = (unsigned char *) dst;
-	s = (unsigned char *) src;
 	run = 0;
-	while (run < len && src != '\0')
-	{
-		d[run] = s[run];
+	i = 0;
+	while (dst[run] != '\0')
 		run++;
+	while (src[i] != '\0' && i < size)
+	{
+		dst[run] = src[i];
+		run++;
+		i++;
 	}
-	return (dst);
+	return (run);
 }
