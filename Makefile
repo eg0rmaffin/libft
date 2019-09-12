@@ -46,7 +46,13 @@ SRCS = ft_putchar.c \
 	   ft_strrchr.c \
 	   ft_cut_str.c \
 	   ft_strstr.c \
-	   ft_strnstr.c
+	   ft_strnstr.c \
+	   ft_memalloc.c \
+	   ft_strnew.c \
+	   ft_memdel.c \
+	   ft_strdel.c \
+	   ft_strclr.c \
+	   ft_striter.c
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 

@@ -51,5 +51,11 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_cut_str(char *victum, int len);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void	*ft_memalloc(size_t size);
+char	*ft_strnew(size_t size);
+void	ft_memdel(void **ap);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
 
 #endif
