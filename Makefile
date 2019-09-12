@@ -17,8 +17,8 @@ SRCS = ft_putchar.c \
 	   ft_count_digits.c \
 	   ft_strlen.c \
 	   ft_strrev.c \
-	   get_negative.c \
-	   single_itoa.c \
+	   ft_get_negative.c \
+	   ft_single_itoa.c \
 	   ft_memcpy.c \
 	   ft_strdup.c \
 	   ft_toupper.c \
@@ -43,7 +43,10 @@ SRCS = ft_putchar.c \
 	   ft_strncmp.c \
 	   ft_strlcat.c \
 	   ft_strchr.c \
-	   ft_strrchr.c
+	   ft_strrchr.c \
+	   ft_cut_str.c \
+	   ft_strstr.c \
+	   ft_strnstr.c
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 

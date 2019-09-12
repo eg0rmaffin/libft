@@ -19,14 +19,18 @@ char	*ft_strrchr(const char *s, int c)
 
 	sign = 0;
 	run = 0;
+	if (c == 0)
+	{
+		while (s[run])
+			run++;
+		return ((void *)(char *)s + run);
+	}
 	while (s[run] != '\0')
 	{
 		if(s[run] == c)
-			sign = (char *)s;
+			sign = (void *)(char *)s + run;
 		run++;
 	}
-	if (c == '\0')
-		return ((char*)s);
 	if (sign)
 		return (sign);
 	return (NULL);

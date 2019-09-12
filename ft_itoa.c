@@ -26,13 +26,13 @@ char	*ft_itoa(int n)
 		return (NULL);
 	while (nb / 10 != 0)
 	{
-		str[run] = single_itoa(nb % 10);
+		str[run] = ft_single_itoa(nb % 10);
 		nb = nb / 10;
 		run++;
 	}
-	str[run] = single_itoa(nb % 10);
+	str[run] = ft_single_itoa(nb % 10);
 	str[run + 1] = '\0';
 	if (n < 0)
-		return (get_negative(ft_strrev(str)));
+		return (ft_get_negative(ft_strrev(str)));
 	return (ft_strrev(str));
 }

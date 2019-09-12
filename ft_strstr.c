@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 05:58:24 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/08 23:41:30 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/11 22:22:42 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/11 22:22:45 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int		sign;
-	size_t	res;
+	int run;
+	int i;
 
-	sign = 1;
-	res = 0;
-	while (((*str > 8) && (*str < 14)) || (*str == 32))
-		str++;
-	if (*str == '-' || *str == '+')
+	run = 0;
+	if (needle[run] == '\0')
+		return ((char*)(void *)haystack + (run));
+	if (haystack[run] == '\0')
+		return (NULL);
+	while (haystack[run] != '\0')
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		i = 0;
+			while (haystack[run + i] == needle[i])
+			{
+				if (needle[i + 1] == '\0')
+					return ((char*)(void *)haystack + (run));
+				i++;
+			}
+		run++;
 	}
-	while ((*str >= '0') && (*str <= '9'))
-	{
-		if (res <= 9223372036854775807)
-			res = (res * 10) + (*str - '0');
-		else if (sign == -1)
-			return (0);
-		else
-			return (-1);
-		str++;
-	}
-	return (res * sign);
+	return (NULL);
 }
