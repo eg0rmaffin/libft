@@ -59,7 +59,10 @@ SRCS = ft_putchar.c \
 	   ft_strequ.c \
 	   ft_strnequ.c \
 	   ft_strsub.c \
-	   ft_strjoin.c
+	   ft_strjoin.c \
+	   ft_strtrim.c \
+	   ft_tabulation_len.c \
+	   ft_strsplit.c
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 
