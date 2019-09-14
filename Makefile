@@ -56,7 +56,10 @@ SRCS = ft_putchar.c \
 	   ft_striteri.c \
 	   ft_strmap.c \
 	   ft_strmapi.c \
-	   ft_strequ.c
+	   ft_strequ.c \
+	   ft_strnequ.c \
+	   ft_strsub.c \
+	   ft_strjoin.c
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 

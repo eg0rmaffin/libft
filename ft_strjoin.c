@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 19:21:00 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/08 22:13:30 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/14 18:36:35 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/14 18:36:36 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned long int run;
+	char	*str;
+	size_t	run;
+	size_t	size;
+	size_t	i;
 
-	unsigned char *ds;
-	unsigned char *sr;
-	run = 0;
-	ds = (unsigned char *) dst;
-	sr = (unsigned char *) src;
-	if (!dst && !src && n != 0)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	while (run < n)
+	run = 0;
+	i = 0;
+	size = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
+	if (!(str = (char *)malloc(sizeof(char) * size)))
+		return (NULL);
+	while (s1[run])
 	{
-		ds[run] = sr[run];
+		str[run] = s1[run];
 		run++;
 	}
-	return (dst);
+	while (s2[i])
+	{
+		str[run] = s2[i];
+		run++;
+		i++;
+	}
+	str[run] = '\0';
+	return (str);
 }

@@ -22,7 +22,7 @@ int		ft_count_digits(int f);
 char	*ft_get_negative(char *s);
 char	ft_single_itoa(int a);
 char	*ft_strrev(char *s);
-int		ft_strlen(char *s);
+size_t		ft_strlen(char *str);
 char    *ft_itoa(int n);
 int		ft_toupper(int a);
 int		ft_tolower(int a);
@@ -61,5 +61,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+//char	**ft_strsplit(char const *s, char c);
 
 #endif

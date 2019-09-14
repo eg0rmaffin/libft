@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 19:21:00 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/08 22:13:30 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/14 17:52:40 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/14 17:52:42 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	unsigned long int run;
-
-	unsigned char *ds;
-	unsigned char *sr;
-	run = 0;
-	ds = (unsigned char *) dst;
-	sr = (unsigned char *) src;
-	if (!dst && !src && n != 0)
-		return (NULL);
-	while (run < n)
+	if ((s1 != NULL) && (s2 != NULL))
 	{
-		ds[run] = sr[run];
-		run++;
+		if (ft_strncmp((char *) s1, (char *) s2, n) == 0)
+			return (1);
+		return (0);
 	}
-	return (dst);
+	return (0);
 }
