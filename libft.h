@@ -70,5 +70,12 @@ char	**ft_strsplit(char const *s, char c);
 char		*ft_create_str(char *s, char c);
 size_t      ft_found_len(char *s, char c);
 size_t     ft_words_counter(char *s, char c);
+void	ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char const *s, int fd);
+void ft_putstr(char const *s);
+void	ft_putnbr_fd(int n, int fd);
+void ft_putnbr(int n);
+void ft_putendl_fd(char const *s, int fd);
+void ft_putendl(char const *s);
 
 #endif

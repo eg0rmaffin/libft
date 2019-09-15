@@ -65,7 +65,14 @@ SRCS = ft_putchar.c \
 	   ft_strsplit.c \
 	   ft_create_str.c \
 	   ft_found_len.c \
-	   ft_words_counter.c
+	   ft_words_counter.c \
+	   ft_putchar_fd.c \
+	   ft_putstr_fd.c \
+	   ft_putstr.c \
+	   ft_putnbr_fd.c \
+	   ft_putnbr.c \
+	   ft_putendl_fd.c \
+	   ft_putendl.c
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 
