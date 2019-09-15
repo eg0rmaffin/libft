@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_words_counter.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 18:33:56 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/13 18:33:58 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/15 22:35:25 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/15 22:35:27 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    **ft_strsplit(char const *s, char c)
+size_t     ft_words_counter(char *s, char c)
 {
-	char 	**arr;
-	size_t 	i;
-	size_t 	run;
+	size_t run;
+	size_t words;
 
-	i = 0;
 	run = 0;
-	if (s == NULL)
-		return (NULL);
-	if(!(arr = (char**)malloc(sizeof(char*) * ft_words_counter((char*)s, c) + 1)))
-		return (NULL);
-	while (s[i] != '\0')
+	words = 0;
+	while (s[run] != '\0')
 	{
-		if (s[i] == c)
-			i++;
-		if ((s[i] != c) && (s[i] != '\0'))
-		{
-			arr[run] = ft_create_str((char*)&s[i], c);
+		if (s[run] == c)
 			run++;
-			i = i + ft_found_len((char*)&s[i], c) + 1;
+		if (s[run] != c)
+		{
+			run = run + ft_found_len((char*)&s[run], c) + 1;
+			words++;
+
 		}
 	}
-	arr[run] = NULL;
-	return (arr);
+	return (words);
 }

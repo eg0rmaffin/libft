@@ -67,5 +67,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 size_t		ft_tabulation_len(char const *s);
 char	**ft_strsplit(char const *s, char c);
+char		*ft_create_str(char *s, char c);
+size_t      ft_found_len(char *s, char c);
+size_t     ft_words_counter(char *s, char c);
 
 #endif
