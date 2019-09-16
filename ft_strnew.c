@@ -14,13 +14,13 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *str;
-	size_t run;
+	char	*str;
+	size_t	run;
 
 	run = 0;
 	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
-	while (run <= size )
+	while (run <= size)
 	{
 		str[run] = '\0';
 		run++;

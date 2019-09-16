@@ -14,9 +14,9 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char s[10];
-	int run;
-	int sign;
+	char	s[10];
+	int		run;
+	int		sign;
 
 	run = 0;
 	sign = 1;

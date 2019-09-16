@@ -14,24 +14,20 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (s != NULL)
-	{
-		int		run;
-		char	*buff;
+	int		run;
+	char	*buff;
 
-		run = 0;
-		while (s[run])
-			run++;
-		if(!(buff = (char *)malloc(sizeof(char) * run + 1)))
-			return (NULL);
-		run = 0;
-		while (s[run])
-		{
-			buff[run] = f(run, (char)s[run]);
-			run++;
-		}
-		buff[run] = '\0';
-		return (buff);
+	run = 0;
+	while (s[run])
+		run++;
+	if (!(buff = (char *)malloc(sizeof(char) * run + 1)))
+		return (NULL);
+	run = 0;
+	while (s[run])
+	{
+		buff[run] = f(run, (char)s[run]);
+		run++;
 	}
-	return (NULL);
+	buff[run] = '\0';
+	return (buff);
 }

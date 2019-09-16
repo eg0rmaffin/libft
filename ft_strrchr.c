@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *sign;
-	int run;
+	char	*sign;
+	int		run;
 
 	sign = 0;
 	run = 0;
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	while (s[run] != '\0')
 	{
-		if(s[run] == c)
+		if (s[run] == c)
 			sign = (void *)(char *)s + run;
 		run++;
 	}

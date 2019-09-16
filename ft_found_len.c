@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t      ft_found_len(char *s, char c)
+size_t		ft_found_len(char *s, char c)
 {
 	size_t run;
 

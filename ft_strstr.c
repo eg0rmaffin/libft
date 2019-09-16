@@ -25,12 +25,12 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	while (haystack[run] != '\0')
 	{
 		i = 0;
-			while (haystack[run + i] == needle[i])
-			{
-				if (needle[i + 1] == '\0')
-					return ((char*)(void *)haystack + (run));
-				i++;
-			}
+		while (haystack[run + i] == needle[i])
+		{
+			if (needle[i + 1] == '\0')
+				return ((char*)(void *)haystack + (run));
+			i++;
+		}
 		run++;
 	}
 	return (NULL);

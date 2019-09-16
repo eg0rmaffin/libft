@@ -32,4 +32,3 @@ char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 	s1[run] = '\0';
 	return (s1);
 }
-

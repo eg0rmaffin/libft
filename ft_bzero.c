@@ -14,17 +14,17 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t run;
-	unsigned char *str;
-	
-	str = (unsigned char *) s;
+	size_t			run;
+	unsigned char	*str;
+
+	str = (unsigned char *)s;
 	run = 0;
 	if (n == 0)
-		return;
+		return ;
 	while (run < n)
 	{
 		str[run] = 0;
 		run++;
 	}
-	return;
+	return ;
 }

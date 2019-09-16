@@ -12,17 +12,18 @@
 
 #include "libft.h"
 
-char    **ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-	char 	**arr;
-	size_t 	i;
-	size_t 	run;
+	unsigned long int	i;
+	unsigned long int	run;
+	char				**arr;
 
 	i = 0;
 	run = 0;
 	if (s == NULL)
 		return (NULL);
-	if(!(arr = (char**)malloc(sizeof(char*) * ft_words_counter((char*)s, c) + 1)))
+	if (!(arr = (char**)malloc(sizeof(char*) * \
+	ft_words_counter((char*)s, c) + 1)))
 		return (NULL);
 	while (s[i] != '\0')
 	{

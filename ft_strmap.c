@@ -14,24 +14,22 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	if (s != NULL)
-	{
-		int		run;
-		char	*buff;
+	int		run;
+	char	*buff;
 
-		run = 0;
-		while (s[run])
-			run++;
-		if(!(buff = (char *)malloc(sizeof(char) * run + 1)))
-			return (NULL);
-		run = 0;
-		while (s[run])
-		{
-			buff[run] = f((char)s[run]);
-			run++;
-		}
-		buff[run] = '\0';
-		return (buff);
+	if (s == NULL)
+		return (NULL);
+	run = 0;
+	while (s[run])
+		run++;
+	if (!(buff = (char *)malloc(sizeof(char) * run + 1)))
+		return (NULL);
+	run = 0;
+	while (s[run])
+	{
+		buff[run] = f((char)s[run]);
+		run++;
 	}
-	return (NULL);
+	buff[run] = '\0';
+	return (buff);
 }

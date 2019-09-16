@@ -14,8 +14,8 @@
 
 char		*ft_create_str(char *s, char c)
 {
-	size_t 	i;
-	char 	*str;
+	size_t		i;
+	char		*str;
 
 	i = 0;
 	if (!(str = (char*)malloc(sizeof(char) * ft_found_len(s, c) + 1)))

@@ -37,4 +37,3 @@ char	*ft_strrev(char *s)
 	dst[i + 1] = '\0';
 	return (dst);
 }
-
