@@ -84,7 +84,7 @@ char				*ft_strrev(char *s);
 char				*ft_cut_str(char *victum, int len);
 char				*ft_create_str(char *s, char c);
 size_t				ft_found_len(char *s, char c);
-size_t				ft_words_counter(char *s, char c);
+size_t				ft_words_counter(const char *s, char c);
 size_t				ft_tabulation_len(char const *s);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);

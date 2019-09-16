@@ -14,28 +14,29 @@
 
 char	**ft_strsplit(char const *s, char c)
 {
-	unsigned long int	i;
-	unsigned long int	run;
-	char				**arr;
+	int		i;
+	int		j;
+	char	**arr;
 
 	i = 0;
-	run = 0;
-	if (s == NULL)
+	if (!(arr = (char**)malloc(sizeof(char*) * (ft_words_counter(s, c) + 1))))
 		return (NULL);
-	if (!(arr = (char**)malloc(sizeof(char*) * \
-	ft_words_counter((char*)s, c) + 1)))
-		return (NULL);
-	while (s[i] != '\0')
+	while (*s)
 	{
-		if (s[i] == c)
-			i++;
-		if ((s[i] != c) && (s[i] != '\0'))
+		while (*s == c)
+			s++;
+		if (*s)
 		{
-			arr[run] = ft_create_str((char*)&s[i], c);
-			run++;
-			i = i + ft_found_len((char*)&s[i], c) + 1;
+			if (!(arr[i] = (char*)malloc(sizeof(char) *
+					(ft_found_len((char *)s, c) + 1))))
+				return (NULL);
+			j = 0;
+			while (*s != c && *s)
+				arr[i][j++] = *(s++);
+			arr[i][j] = '\0';
+			i++;
 		}
 	}
-	arr[run] = NULL;
+	arr[i] = NULL;
 	return (arr);
 }
