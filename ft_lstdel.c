@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckumera <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 17:00:44 by ckumera           #+#    #+#             */
-/*   Updated: 2019/09/12 17:00:47 by ckumera          ###   ########.fr       */
+/*   Created: 2019/09/16 18:07:44 by ckumera           #+#    #+#             */
+/*   Updated: 2019/09/16 18:07:46 by ckumera          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *hs, const char *nd, size_t ln)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t run;
-	size_t i;
+	t_list	*buff;
 
-	run = 0;
-	if (nd[run] == '\0')
-		return ((char*)(void *)hs + (run));
-	if (hs[run] == '\0')
-		return (NULL);
-	while (hs[run] != '\0' && run < ln)
+	while(*alst)
 	{
-		i = 0;
-		while ((hs[run + i] == nd[i]) && (run + i < ln))
-		{
-			if (nd[i + 1] == '\0')
-				return ((char*)(void *)hs + (run));
-			i++;
-		}
-		run++;
+		buff = (*alst)->next;
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		*alst = NULL;
+		*alst = buff;
 	}
-	return (NULL);
 }
