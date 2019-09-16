@@ -30,6 +30,5 @@ char	*ft_get_negative(char *s)
 		i++;
 	}
 	s2[run] = '\0';
-	free(s);
 	return (s2);
 }
