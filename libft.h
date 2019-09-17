@@ -83,7 +83,7 @@ char				*ft_get_negative(char *s);
 char				*ft_strrev(char *s);
 char				*ft_cut_str(char *victum, int len);
 char				*ft_create_str(char *s, char c);
-size_t				ft_found_len(char *s, char c);
+size_t				ft_found_len(const char *s, char c);
 size_t				ft_words_counter(const char *s, char c);
 size_t				ft_tabulation_len(char const *s);
 

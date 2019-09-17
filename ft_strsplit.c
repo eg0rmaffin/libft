@@ -19,6 +19,8 @@ char	**ft_strsplit(char const *s, char c)
 	char	**arr;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	if (!(arr = (char**)malloc(sizeof(char*) * (ft_words_counter(s, c) + 1))))
 		return (NULL);
 	while (*s)
@@ -27,14 +29,12 @@ char	**ft_strsplit(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			if (!(arr[i] = (char*)malloc(sizeof(char) *
-					(ft_found_len((char *)s, c) + 1))))
+			if (!(arr[i] = (char*)malloc(sizeof(char) * (ft_found_len(s, c)))))
 				return (NULL);
 			j = 0;
 			while (*s != c && *s)
 				arr[i][j++] = *(s++);
-			arr[i][j] = '\0';
-			i++;
+			arr[i++][j] = '\0';
 		}
 	}
 	arr[i] = NULL;

@@ -25,7 +25,7 @@ size_t		ft_words_counter(const char *s, char c)
 			run++;
 		if (s[run] != c)
 		{
-			run = run + ft_found_len((char*)&s[run], c) + 1;
+			run = run + ft_found_len((char*)&s[run], c);
 			words++;
 		}
 	}
