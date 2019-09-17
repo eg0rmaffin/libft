@@ -75,7 +75,8 @@ SRCS = ft_putchar.c \
 	   ft_putendl.c \
 	   ft_lstnew.c \
 	   ft_lstdelone.c \
-	   ft_lstdel.c
+	   ft_lstdel.c \
+	   ft_lstadd.c
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 
